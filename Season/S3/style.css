@@ -1,21 +1,23 @@
-
-/* --- FIXED HEADER --- */
+/* ---HEADER --- */
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #1c1c1c; /* dark background */
-  border-bottom: 2px solid #ffd700; /* golden accent */
+  background: linear-gradient(135deg, rgba(28,28,28,0.6) 0%, rgba(10,10,10,0.3) 100%);
+  border-bottom: 1px solid #ffffff22;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 0.8rem 1.5rem;
   z-index: 3000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem; /* 🔥 increased gap (was 2rem) */
+  gap: 3rem;
 }
 
 .header-title {
@@ -25,10 +27,9 @@
   color: #e0e0e0;
   text-shadow: 0 0 8px #ffd700, 0 0 16px #ffcc00;
   margin: 0;
-  margin-left: 0.5rem; /* 🔥 small extra shift */
+  margin-left: 0.5rem;
   letter-spacing: 1px;
 }
-
 
 /* --- DROPDOWN MENU --- */
 .dropdown {
@@ -86,322 +87,303 @@
   display: block;
 }
 
-/* --- BODY PADDING SO CONTENT NOT HIDDEN --- */
+/* --- BODY --- */
 body {
-  padding-top: 75px; /* matches header height */
+  padding-top: 75px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(22, 20, 24);
+  color: #eee;
+  user-select: none;
+  min-height: 100vh;
 }
-
-
 
 /* Reset and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a1a;
-    color: #e0e0e0;
-    line-height: 1.6;
-    min-height: 100vh;
-}
-
-/* Typography */
 p {
-    font-size: 1em;
-    line-height: 1.7;
-    color: #d0d0d0;
-    margin-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.7;
+  color: #d0d0d0;
+  margin-bottom: 1em;
 }
 
-/* Hero Section */
+/* --- HERO SECTION (Season 1) --- */
 .season-hero {
-    background: linear-gradient(135deg, #2c2c2c 0%, #1f1f1f 100%);
-    color: #fff;
-    text-align: center;
-    padding: 4em 2em;
-    border-bottom: 2px solid #444;
+  position: relative;
+  text-align: center;
+  padding: 4em 2em;
+  border-bottom: 1px solid #ffffff22;
+  background: linear-gradient(145deg, rgba(40,44,52,0.6) 0%, rgba(17,0,32,0.3) 100%);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 7px 20px 5px #00000088;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+  transition: 0.5s all ease-in-out;
 }
 
-.season-info {
-    max-width: 600px;
-    margin: 0 auto;
+.season-hero:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.01);
+  filter: brightness(1.15);
 }
 
 .season-title {
-    font-size: 3.5em;
-    margin-bottom: 0.3em;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3.5em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+               0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 .season-subtitle {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-    color: #b0b0b0;
-    font-weight: 300;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  color: #d0d0d0;
+  font-weight: 300;
 }
 
-/* Content Section */
+/* --- CONTENT SECTION --- */
 .content-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3em 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3em 1.5em;
 }
 
-.section-card {
-    background: #2a2a2a;
-    border: 1px solid #404040;
-    padding: 2.5em;
-    margin-bottom: 2.5em;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+/* Glassmorphism Cards */
+.section-card,
+.arc-card,
+.character-card {
+  position: relative;
+  user-select: none;
+  border: 1px solid #ffffff22;
+  background: linear-gradient(145deg, rgba(40,44,52,0.6) 0%, rgba(17,0,32,0.3) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: 0.5s all ease-in-out;
+  padding: 2.5em;
+  margin-bottom: 2.5em;
 }
 
-.section-card:hover {
-    background: #333;
-    border-color: #555;
-    transform: translateY(-2px);
+.section-card:hover,
+.arc-card:hover,
+.character-card:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.015);
+  filter: brightness(1.2);
+}
+
+.section-card::before,
+.arc-card::before,
+.character-card::before {
+  position: absolute;
+  content: "";
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  width: 100%;
+  transition: 0.7s all;
+}
+
+.section-card:hover::before,
+.arc-card:hover::before,
+.character-card:hover::before {
+  filter: brightness(0.7);
+  top: -100%;
+  left: 200%;
 }
 
 .section-title {
-    font-size: 2.2em;
-    color: #fff;
-    margin-bottom: 1.2em;
-    text-align: center;
-    font-weight: 500;
-    border-bottom: 2px solid #555;
-    padding-bottom: 0.5em;
+  font-size: 2.2em;
+  color: #fff;
+  margin-bottom: 1.2em;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 2px solid #555;
+  padding-bottom: 0.5em;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+               0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 /* Grid Layouts */
 .arcs-grid,
 .character-grid {
-    display: grid;
-    gap: 1.8em;
-    margin: 2em 0;
+  display: grid;
+  gap: 1.8em;
+  margin: 2em 0;
 }
 
 .arcs-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .character-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-/* Arc & Character Cards */
-.arc-card,
-.character-card {
-    background: #333;
-    border: 1px solid #505050;
-    padding: 1.8em;
-    border-radius: 6px;
-    border-left: 4px solid #666;
-    transition: all 0.3s ease;
-}
-
-.arc-card:hover,
-.character-card:hover {
-    background: #3a3a3a;
-    border-left-color: #888;
-    transform: translateY(-3px);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .arc-title,
 .character-name {
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 1em;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1em;
 }
 
 .arc-title {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .character-name {
-    font-size: 1.2em;
-    margin-bottom: 0.8em;
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
 }
 
 /* Character Images */
 .character-img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 1em;
-    transition: transform 0.3s ease;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1em;
+  transition: transform 0.3s ease;
 }
 
 .character-card:hover .character-img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-}
-
-.dropbtn {
-    background: #2a2a2a;
-    color: #fff;
-    padding: 12px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background 0.3s ease;
-}
-
-.dropbtn:hover {
-    background: #444;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #2a2a2a;
-    min-width: 160px;
-    border: 1px solid #444;
-    border-radius: 6px;
-}
-
-.dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background: #444;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Footer */
+/* --- FOOTER (Glass) --- */
 footer {
-    background: #1f1f1f;
-    border-top: 2px solid #444;
-    color: #b0b0b0;
-    padding: 2.5em 0;
-    text-align: center;
-    margin-top: 3em;
+  position: relative;
+  background: linear-gradient(145deg, rgba(40,44,52,0.6) 0%, rgba(17,0,32,0.3) 100%);
+  border-top: 1px solid #ffffff22;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -7px 20px 5px #00000088;
+  border-radius: 1rem 1rem 0 0;
+  color: #b0b0b0;
+  padding: 2.5em 0;
+  text-align: center;
+  margin-top: 3em;
+  transition: 0.5s all ease-in-out;
+}
+
+footer:hover {
+  border-top: 1px solid #ffffff44;
+  box-shadow: 0 -7px 50px 10px #000000aa;
+  filter: brightness(1.15);
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5em;
 }
 
 .footer-content p {
-    font-size: 1.1em;
+  font-size: 1.1em;
+  color: #eee;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .season-hero {
-        padding: 3em 1.5em;
-    }
-
-    .season-title {
-        font-size: 2.8em;
-    }
-
-    .season-subtitle {
-        font-size: 1.2em;
-    }
-
-    .content-section {
-        padding: 2em 1em;
-    }
-
-    .section-card {
-        padding: 2em;
-    }
-
-    .section-title {
-        font-size: 2em;
-    }
-
-    .arcs-grid,
-    .character-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5em;
-    }
+  .season-hero {
+    padding: 3em 1.5em;
+  }
+  .season-title {
+    font-size: 2.8em;
+  }
+  .season-subtitle {
+    font-size: 1.2em;
+  }
+  .content-section {
+    padding: 2em 1em;
+  }
+  .section-card {
+    padding: 2em;
+  }
+  .section-title {
+    font-size: 2em;
+  }
+  .arcs-grid,
+  .character-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
 }
 
 @media (max-width: 480px) {
-    .season-hero {
-        padding: 2.5em 1em;
-    }
-
-    .season-title {
-        font-size: 2.5em;
-    }
-
-    .section-card,
-    .arc-card,
-    .character-card {
-        padding: 1.5em;
-    }
+  .season-hero {
+    padding: 2.5em 1em;
+  }
+  .season-title {
+    font-size: 2.5em;
+  }
+  .section-card,
+  .arc-card,
+  .character-card {
+    padding: 1.5em;
+  }
 }
 
-/* Scrollbar */
+/* --- SCROLLBAR --- */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-    background: #2a2a2a;
+  background: #2a2a2a;
 }
-
 ::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
+  background: #555;
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-    background: #666;
+  background: #666;
 }
 
-/* Selection */
+/* --- SELECTION --- */
 ::selection {
-    background: #555;
-    color: #fff;
+  background: #555;
+  color: #fff;
 }
 
-/* Video Container */
+/* --- VIDEO CONTAINER --- */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
 }
-
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
 }
