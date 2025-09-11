@@ -16,7 +16,7 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 3rem;
 }
 
@@ -387,3 +387,4 @@ footer:hover {
   border: none;
   border-radius: 8px;
 }
+
