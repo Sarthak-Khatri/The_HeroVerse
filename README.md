@@ -43,23 +43,6 @@ Welcome to a modern, interactive web portal dedicated to the world of My Hero Ac
   - Poppins (Google Fonts)
   - Bebas Neue (Headers)
   - Roboto (Fallback)
-
-
-
-## 📱 Responsive Design
-
-The site is fully responsive with breakpoints for:
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: Below 768px
-
-Key responsive features:
-- Adaptive typography scaling
-- Touch-friendly navigation
-- Optimized image sizes
-- Adjusted spacing and layouts
-
-
 ##
 
 **Plus Ultra!** 💪 Join us in celebrating the amazing world of My Hero Academia through this interactive web experience.
