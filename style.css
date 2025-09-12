@@ -28,7 +28,7 @@ body {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  z-index: 15 !important;
+  z-index: -1 !important;   /* fixed: behind everything */
   pointer-events: none !important;
 }
 
@@ -39,7 +39,7 @@ body {
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 15 !important;
+  z-index: -1 !important;   /* fixed: behind everything */
 }
 
 /* Header */
@@ -517,3 +517,17 @@ html {
   background: #dad5d59c;
 }
 
+.characters-slider-section,
+.seasons-slider-section,
+.welcome-card,
+.section-title,
+.character-card,
+.season-card {
+  position: relative;
+  z-index: 50; 
+}
+
+.message-box {
+  position: relative;
+  z-index: 60; 
+}
